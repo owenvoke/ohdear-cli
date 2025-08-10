@@ -25,7 +25,7 @@ class CronCheckDeleteCommand extends Command
             return 1;
         }
 
-        $ohDear->deleteCronCheck($this->argument('id'));
+        $ohDear->deleteCronCheckDefinition($this->argument('id'));
 
         render(view('notice', [
             'notice' => "Removed the cron check with id {$this->argument('id')}",

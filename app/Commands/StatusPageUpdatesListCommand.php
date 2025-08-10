@@ -24,6 +24,6 @@ class StatusPageUpdatesListCommand extends Command
             return 1;
         }
 
-        render(view('status-page-updates-list', ['statusPageUpdates' => $ohDear->statusPageUpdates($this->argument('status-page-id'))]));
+        render(view('status-page-updates-list', ['statusPageUpdates' => $ohDear->statusPage($this->argument('status-page-id'))->updates]));
     }
 }

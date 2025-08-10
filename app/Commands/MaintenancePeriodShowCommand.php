@@ -13,7 +13,7 @@ class MaintenancePeriodShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'maintenance-period:show {site-id : The id of the site to view maintenance periods for}';
+    protected $signature = 'maintenance-period:show {monitor-id : The id of the site to view maintenance periods for}';
 
     /** @var string */
     protected $description = 'Display the maintenance periods for a site';
@@ -25,7 +25,7 @@ class MaintenancePeriodShowCommand extends Command
         }
 
         render(view('maintenance-period-show', [
-            'maintenancePeriods' => $ohDear->maintenancePeriods($this->argument('site-id')),
+            'maintenancePeriods' => $ohDear->maintenancePeriods($this->argument('monitor-id')),
         ]));
     }
 }

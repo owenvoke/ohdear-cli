@@ -58,13 +58,13 @@ ohdear list
 
 #### Broken Links
 
-- `ohdear broken-link:show [site-id]`  
-  Display broken links for a specific site
+- `ohdear broken-link:show [monitor-id]`  
+  Display broken links for a specific monitor
 
 #### Certificate Health
 
-- `ohdear certificate-health:show [site-id] [--checks] [--issuers]`  
-  Display certificate health for a specific site (use `--checks` or `--issuers` for additional information)
+- `ohdear certificate-health:show [monitor-id] [--checks] [--issuers]`  
+  Display certificate health for a specific monitor (use `--checks` or `--issuers` for additional information)
 
 #### Checks
 
@@ -74,65 +74,65 @@ ohdear list
   Enable a specific check
 - `ohdear check:request-run [id]`  
   Request a new run for a specific check
-- `ohdear check:show [site-id]`  
-  Display checks for a specific site
+- `ohdear check:show [monitor-id]`  
+  Display checks for a specific monitor
 
 #### Cron Job Monitoring
 
-- `ohdear cron-check:add [site-id] [name] [frequency-or-expression] [--grace-time=5] [--description=] [--timezone=UTC]`  
-  Add a new cron check for a site
+- `ohdear cron-check:add [monitor-id] [name] [frequency-or-expression] [--grace-time=5] [--description=] [--timezone=UTC]`  
+  Add a new cron check for a monitor
 - `ohdear cron-check:delete [id]`  
   Delete a cron check
-- `ohdear cron-check:show [site-id]`  
-  Display the cron checks for a specific site
+- `ohdear cron-check:show [monitor-id]`  
+  Display the cron checks for a specific monitor
 
 #### DNS Monitoring
 
-- `ohdear dns-history:list [site-id]`  
+- `ohdear dns-history:list [monitor-id]`  
   Display a list of DNS history items and their summary
-- `ohdear dns-history:show [site-id] [id]`  
+- `ohdear dns-history:show [monitor-id] [id]`  
   Display details about a specific DNS history item
 
 #### Lighthouse SEO Reports
 
-- `ohdear lighthouse-report:list [site-id]`  
+- `ohdear lighthouse-report:list [monitor-id]`  
   Display a list of Lighthouse reports and their summary
-- `ohdear lighthouse-report:show [site-id]`  
+- `ohdear lighthouse-report:show [monitor-id]`  
   Display details about the latest Lighthouse report
-- `ohdear lighthouse-report:show [site-id] [id]`  
+- `ohdear lighthouse-report:show [monitor-id] [id]`  
   Display details about a specific Lighthouse report
 
 #### Maintenance Windows
 
-- `ohdear maintenance-period:add [site-id] [start-date] [end-date]`  
-  Add a new maintenance period for a site
+- `ohdear maintenance-period:add [monitor-id] [start-date] [end-date]`  
+  Add a new maintenance period for a monitor
 - `ohdear maintenance-period:delete [id]`  
   Delete a maintenance period
 - `ohdear maintenance-period:show [id]`  
-  Display maintenance periods for a specific site
-- `ohdear maintenance-period:start [site-id] [seconds]`  
-  Start a new maintenance period for a site
-- `ohdear maintenance-period:stop [site-id]`  
-  Stop the currently active maintenance period for a site
+  Display maintenance periods for a specific monitor
+- `ohdear maintenance-period:start [monitor-id] [seconds]`  
+  Start a new maintenance period for a monitor
+- `ohdear maintenance-period:stop [monitor-id]`  
+  Stop the currently active maintenance period for a monitor
 
 #### Mixed Content
 
-- `ohdear mixed-content:show [site-id]`  
-  Display mixed content for a specific site
+- `ohdear mixed-content:show [monitor-id]`  
+  Display mixed content for a specific monitor
 
 #### Performance
 
 - `ohdear performance:show [id] [start-date?] [end-date?] [--limit=5] [--timeframe=1h]`  
-  Display performance details for a specific site
+  Display performance details for a specific monitor
 
-#### Sites
+#### Monitors
 
-- `ohdear sites:add [url]`  
-  Add a new site to Oh Dear
-- `ohdear sites:list`  
-  Display a list of sites and their current status
-- `ohdear sites:show [id]`  
-  Display details about a specific site
+- `ohdear monitors:add [url]`  
+  Add a new monitor to Oh Dear
+- `ohdear monitors:list`  
+  Display a list of monitors and their current status
+- `ohdear monitors:show [id]`  
+  Display details about a specific monitor
 
 #### Status Pages
 
@@ -149,10 +149,10 @@ ohdear list
 
 #### Uptime
 
-- `ohdear uptime:show [site-id] [start-date?] [end-date?] [--limit=10] [--timeframe=hour]`  
-  Display the uptime for a specific site
-- `ohdear downtime:show [site-id] [start-date?] [end-date?] [--limit=10]`  
-  Display the downtime for a specific site
+- `ohdear uptime:show [monitor-id] [start-date?] [end-date?] [--limit=10] [--timeframe=hour]`  
+  Display the uptime for a specific monitor
+- `ohdear downtime:show [monitor-id] [start-date?] [end-date?] [--limit=10]`  
+  Display the downtime for a specific monitor
 
 ## Contributing
 

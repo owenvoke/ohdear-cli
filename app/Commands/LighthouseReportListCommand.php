@@ -13,7 +13,7 @@ class LighthouseReportListCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'lighthouse-report:list {site-id : The id of the site to view Lighthouse reports for}';
+    protected $signature = 'lighthouse-report:list {monitor-id : The id of the site to view Lighthouse reports for}';
 
     /** @var string */
     protected $description = 'Display a list of Lighthouse reports and their summary';
@@ -24,6 +24,6 @@ class LighthouseReportListCommand extends Command
             return 1;
         }
 
-        render(view('lighthouse-report-list', ['lighthouseReports' => $ohDear->lighthouseReports($this->argument('site-id'))]));
+        render(view('lighthouse-report-list', ['lighthouseReports' => $ohDear->lighthouseReports($this->argument('monitor-id'))]));
     }
 }

@@ -14,7 +14,7 @@ class DowntimeShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'downtime:show {site-id : The id of the site to view downtime for}
+    protected $signature = 'downtime:show {monitor-id : The id of the site to view downtime for}
                                           {start-date? : The date to start at}
                                           {end-date? : The date to end at}
                                           {--limit=10 : The number of downtime records to show}';
@@ -36,7 +36,7 @@ class DowntimeShowCommand extends Command
             $endDate = now()->format('YmdHis');
         }
 
-        $downtime = collect($ohDear->downtime($this->argument('site-id'), $startDate, $endDate))
+        $downtime = collect($ohDear->downtime($this->argument('monitor-id'), $startDate, $endDate))
             ->take((int) $this->option('limit'));
 
         render(view('downtime-show', ['downtime' => $downtime]));

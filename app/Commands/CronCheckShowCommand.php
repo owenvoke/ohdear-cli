@@ -13,7 +13,7 @@ class CronCheckShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'cron-check:show {site-id : The id of the site to view cron checks for}';
+    protected $signature = 'cron-check:show {monitor-id : The id of the site to view cron checks for}';
 
     /** @var string */
     protected $description = 'Display the cron checks for a site';
@@ -24,6 +24,6 @@ class CronCheckShowCommand extends Command
             return 1;
         }
 
-        render(view('cron-check-show', ['cronChecks' => $ohDear->cronChecks($this->argument('site-id'))]));
+        render(view('cron-check-show', ['cronChecks' => $ohDear->cronChecks($this->argument('monitor-id'))]));
     }
 }

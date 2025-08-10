@@ -13,7 +13,7 @@ class CertificateHealthShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'certificate-health:show {site-id : The id of the site to view certificate health for}
+    protected $signature = 'certificate-health:show {monitor-id : The id of the site to view certificate health for}
                                                     {--c|checks : Include a list of the certificate checks that were performed}
                                                     {--i|issuers : Include a list of the certificate issuers}
                                                     {--f|full : Include all certificate information}';
@@ -28,7 +28,7 @@ class CertificateHealthShowCommand extends Command
         }
 
         render(view('certificate-health-show', [
-            'certificateHealth' => $ohDear->certificateHealth($this->argument('site-id')),
+            'certificateHealth' => $ohDear->certificateHealth($this->argument('monitor-id')),
             'withChecks' => $this->option('checks') || $this->option('full'),
             'withIssuers' => $this->option('issuers') || $this->option('full'),
         ]));

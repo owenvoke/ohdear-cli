@@ -10,7 +10,7 @@
     <ul>
         @forelse ($user->teams as $team)
             <li>
-                <span class="font-bold text-gray capitalize">{{ $team->name }}</span> ({{ $team->id }})
+                <span class="font-bold text-gray capitalize">{{ $team['name'] }}</span> ({{ $team['id'] }})
             </li>
         @empty
             <li class="list-none">

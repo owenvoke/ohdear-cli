@@ -24,7 +24,7 @@ class CheckRequestRunCommand extends Command
             return 1;
         }
 
-        $ohDear->requestRun($this->argument('id'));
+        $ohDear->requestCheckRun($this->argument('id'));
 
         render(view('notice', [
             'notice' => "Requested a run for the check with id {$this->argument('id')}",

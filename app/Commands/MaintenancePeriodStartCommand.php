@@ -14,7 +14,7 @@ class MaintenancePeriodStartCommand extends Command
 
     /** @var string */
     protected $signature = 'maintenance-period:start
-                            {site-id : The id of the site that you want to create a maintenance period for}
+                            {monitor-id : The id of the site that you want to create a maintenance period for}
                             {seconds : The maintenance period in seconds}';
 
     /** @var string */
@@ -34,7 +34,7 @@ class MaintenancePeriodStartCommand extends Command
             return;
         }
 
-        $maintenancePeriod = $ohDear->startSiteMaintenance($this->argument('site-id'), (int) $seconds);
+        $maintenancePeriod = $ohDear->startMaintenancePeriod($this->argument('monitor-id'), (int) $seconds);
 
         render(view('notice', ['notice' => "Started a new maintenance period with id {$maintenancePeriod->id}"]));
 

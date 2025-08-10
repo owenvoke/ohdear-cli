@@ -8,15 +8,18 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class DomainShowCommand extends Command
+class MonitorsListCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'domain:show {site-id : The id of the site to view domain information for}';
+    protected $signature = 'monitors:list';
 
     /** @var string */
-    protected $description = 'Display the domain information for a site';
+    protected $description = 'Display a list of monitors and their current status';
+
+    /** {@inheritdoc} */
+    protected $aliases = ['sites:list'];
 
     public function handle(OhDear $ohDear)
     {
@@ -24,8 +27,6 @@ class DomainShowCommand extends Command
             return 1;
         }
 
-        render(view('domain-show', [
-            'domain' => $ohDear->domain($this->argument('site-id')),
-        ]));
+        render(view('sites-list', ['sites' => $ohDear->monitors()]));
     }
 }

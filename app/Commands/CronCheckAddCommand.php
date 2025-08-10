@@ -14,7 +14,7 @@ class CronCheckAddCommand extends Command
 
     /** @var string */
     protected $signature = 'cron-check:add
-                            {site-id : The id of the site that you want to create a cron check for}
+                            {monitor-id : The id of the monitor that you want to create a cron check for}
                             {name : The name of the cron check}
                             {frequency-or-expression : The frequency of the cron check in minutes, or cron expression}
                             {--grace-time=5 : The grace time in minutes}
@@ -36,22 +36,29 @@ class CronCheckAddCommand extends Command
             return;
         }
 
-        $cronCheck = is_numeric($this->argument('frequency-or-expression')) ?
-            $ohDear->createSimpleCronCheck(
-                $this->argument('site-id'),
-                $name,
-                (int) $this->argument('frequency-or-expression'),
-                (int) $this->option('grace-time'),
-                $this->option('description'),
-            ) :
-            $ohDear->createCronCheck(
-                $this->argument('site-id'),
-                $name,
-                $this->argument('frequency-or-expression'),
-                (int) $this->option('grace-time'),
-                $this->option('description'),
-                $this->option('timezone')
-            );
+        $cronCheck = match (true) {
+            is_numeric($this->argument('frequency-or-expression')) => $ohDear->createCronCheckDefinition(
+                $this->argument('monitor-id'),
+                [
+                    'name' => $name,
+                    'type' => 'simple',
+                    'frequency_in_minutes' => (int) $this->argument('frequency-or-expression'),
+                    'grace_time_in_minutes' => (int) $this->option('grace-time'),
+                    'description' => $this->option('description') ?? '',
+                ],
+            ),
+            default => $ohDear->createCronCheckDefinition(
+                $this->argument('monitor-id'),
+                [
+                    'name' => $name,
+                    'type' => 'cron',
+                    'frequency_in_minutes' => (int) $this->argument('frequency-or-expression'),
+                    'grace_time_in_minutes' => (int) $this->option('grace-time'),
+                    'description' => $this->option('description') ?? '',
+                    'timezone' => $this->option('timezone'),
+                ],
+            )
+        };
 
         $schedule = $cronCheck->cronExpression ?: "every {$cronCheck->frequencyInMinutes} minutes";
 

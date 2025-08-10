@@ -8,18 +8,21 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class SitesAddCommand extends Command
+class MonitorsAddCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'sites:add
+    protected $signature = 'monitors:add
                             {url : The url of the site that you want to add}
-                            {--t|team= : The id of the team that the site should be added to}
+                            {--t|team= : The id of the team that the monitor should be added to}
                             {--c|checks=* : The list of checks that should be used, defaults to all checks}';
 
     /** @var string */
-    protected $description = 'Add a new site to Oh Dear';
+    protected $description = 'Add a new monitor to Oh Dear';
+
+    /** {@inheritdoc} */
+    protected $aliases = ['sites:add'];
 
     public function handle(OhDear $ohDear)
     {
@@ -41,7 +44,7 @@ class SitesAddCommand extends Command
 
         $checks = $this->hasOption('checks') ? ['checks' => $this->option('checks')] : [];
 
-        $site = $ohDear->createSite(array_merge([
+        $site = $ohDear->createMonitor(array_merge([
             'url' => $url,
             'team_id' => $teamId,
         ], $checks));

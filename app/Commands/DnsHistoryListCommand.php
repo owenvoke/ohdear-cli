@@ -13,7 +13,7 @@ class DnsHistoryListCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'dns-history:list {site-id : The id of the site to view DNS history for}';
+    protected $signature = 'dns-history:list {monitor-id : The id of the site to view DNS history for}';
 
     /** @var string */
     protected $description = 'Display a list of DNS history items and their summary';
@@ -24,6 +24,6 @@ class DnsHistoryListCommand extends Command
             return 1;
         }
 
-        render(view('dns-history-list', ['dnsHistoryItems' => $ohDear->dnsHistoryItems($this->argument('site-id'))]));
+        render(view('dns-history-list', ['dnsHistoryItems' => $ohDear->dnsHistoryItems($this->argument('monitor-id'))]));
     }
 }

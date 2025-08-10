@@ -5,6 +5,7 @@ namespace App\Commands;
 use App\Commands\Concerns\EnsureHasToken;
 use Carbon\Carbon;
 use LaravelZero\Framework\Commands\Command;
+use OhDear\PhpSdk\Enums\UptimeMetricsSplit;
 use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
@@ -14,7 +15,7 @@ class UptimeShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'uptime:show {site-id : The id of the site to view uptime for}
+    protected $signature = 'uptime:show {monitor-id : The id of the site to view uptime for}
                                         {start-date? : The date to start at}
                                         {end-date? : The date to end at}
                                         {--limit=10 : The number of uptime records to show}
@@ -37,10 +38,21 @@ class UptimeShowCommand extends Command
             $endDate = now()->format('YmdHis');
         }
 
-        $timeframe = in_array($this->option('timeframe'), ['hour', 'day', 'month']) ? $this->option('timeframe') : 'hour';
+        $timeframe = $this->timeframeToMetricsSplit($this->option('timeframe'));
 
-        $uptime = $ohDear->uptime($this->argument('site-id'), $startDate, $endDate, $timeframe);
+        $uptime = $ohDear->httpUptimeMetrics($this->argument('monitor-id'), $startDate, $endDate, $timeframe);
 
         render(view('uptime-show', ['uptime' => collect($uptime)->take((int) $this->option('limit'))]));
+    }
+
+    private function timeframeToMetricsSplit(mixed $timeframe): UptimeMetricsSplit
+    {
+        return match ($timeframe) {
+            'month' => UptimeMetricsSplit::Month,
+            'week' => UptimeMetricsSplit::Week,
+            'day' => UptimeMetricsSplit::Day,
+            'minute' => UptimeMetricsSplit::Minute,
+            default => UptimeMetricsSplit::Hour,
+        };
     }
 }

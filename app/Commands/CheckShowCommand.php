@@ -13,7 +13,7 @@ class CheckShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'check:show {site-id : The id of the site to view checks for}';
+    protected $signature = 'check:show {monitor-id : The id of the site to view checks for}';
 
     /** @var string */
     protected $description = 'Display the checks for a site';
@@ -24,7 +24,7 @@ class CheckShowCommand extends Command
             return 1;
         }
 
-        $checks = $ohDear->site($this->argument('site-id'))->checks;
+        $checks = $ohDear->monitor($this->argument('monitor-id'))->checks;
 
         render(view('check-show', ['checks' => $checks]));
     }

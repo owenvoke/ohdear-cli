@@ -8,15 +8,18 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class SitesShowCommand extends Command
+class MonitorsShowCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'sites:show {id : The id of the site to view}';
+    protected $signature = 'monitors:show {id : The id of the site to view}';
 
     /** @var string */
     protected $description = 'Display a single site and its current status';
+
+    /** {@inheritdoc} */
+    protected $aliases = ['sites:show'];
 
     public function handle(OhDear $ohDear)
     {
@@ -24,7 +27,7 @@ class SitesShowCommand extends Command
             return 1;
         }
 
-        $site = $ohDear->site($this->argument('id'));
+        $site = $ohDear->monitor($this->argument('id'));
 
         $uptimePercentage = $site->uptime(
             now()->subDay()->format('YmdHis'),

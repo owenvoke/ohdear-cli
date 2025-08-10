@@ -13,7 +13,7 @@ class ApplicationHealthShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'application-health:show {site-id : The id of the site to view application health for}';
+    protected $signature = 'application-health:show {monitor-id : The id of the site to view application health for}';
 
     /** @var string */
     protected $description = 'Display the application health for a site';
@@ -25,7 +25,7 @@ class ApplicationHealthShowCommand extends Command
         }
 
         render(view('application-health-show', [
-            'applicationHealthChecks' => $ohDear->applicationHealthChecks($this->argument('site-id')),
+            'applicationHealthChecks' => $ohDear->applicationHealthChecks($this->argument('monitor-id')),
         ]));
     }
 }
