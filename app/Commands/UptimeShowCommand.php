@@ -31,11 +31,11 @@ class UptimeShowCommand extends Command
         }
 
         if (! $startDate = $this->argument('start-date')) {
-            $startDate = Carbon::yesterday()->format('YmdHis');
+            $startDate = Carbon::yesterday()->format('Y-m-d H:i:s');
         }
 
         if (! $endDate = $this->argument('end-date')) {
-            $endDate = now()->format('YmdHis');
+            $endDate = now()->format('Y-m-d H:i:s');
         }
 
         $timeframe = $this->timeframeToMetricsSplit($this->option('timeframe'));

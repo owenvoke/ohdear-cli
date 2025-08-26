@@ -1,3 +1,4 @@
+@php /** @var list<OhDear\PhpSdk\Dto\StatusPage> $statusPage */ @endphp
 <x-layouts.app>
     <table style="box">
         <thead>
@@ -17,10 +18,10 @@
                     <span>{{ $statusPage->title }}</span>
                 </td>
                 <td>
-                    <span>{{ $statusPage->attributes['summarized_status'] }}</span>
+                    <span>{{ $statusPage->summarizedStatus }}</span>
                 </td>
                 <td>
-                    <span>{{ implode(',', collect($statusPage->attributes['monitors'])->map(fn (array $monitor) => $monitor['sort_url'])->toArray()) }}</span>
+                    <span>{{ implode(',', collect($statusPage->monitors)->map(fn (array $monitor) => $monitor['sort_url'])->toArray()) }}</span>
                 </td>
             </tr>
         @empty

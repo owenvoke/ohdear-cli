@@ -1,3 +1,4 @@
+@php /** @var list<OhDear\PhpSdk\Dto\Check> $checks */ @endphp
 <x-layouts.app>
     <table style="box">
         <thead>
@@ -11,16 +12,16 @@
         @forelse($checks as $check)
             <tr>
                 <td>
-                    <span>{{ $check->id }}</span>
+                    <span>{{ $check['id'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $check->label }}</span>
+                    <span>{{ $check['label'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $check->type }}</span>
+                    <span>{{ $check['type'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $check->enabled ? 'Yes' : 'No' }}</span>
+                    <span>{{ $check['enabled'] ? 'Yes' : 'No' }}</span>
                 </td>
             </tr>
         @empty

@@ -29,12 +29,6 @@ class MonitorsShowCommand extends Command
 
         $monitor = $ohDear->monitor($this->argument('id'));
 
-        $uptimePercentage = $monitor->uptime(
-            now()->subDay()->format('YmdHis'),
-            now()->format('YmdHis'),
-            'day'
-        )[0]->uptimePercentage ?? 'unknown';
-
-        render(view('monitors-show', compact('monitor', 'uptimePercentage')));
+        render(view('monitors-show', ['monitor' => $monitor]));
     }
 }

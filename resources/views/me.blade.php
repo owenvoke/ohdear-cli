@@ -1,3 +1,4 @@
+@php /** @var OhDear\PhpSdk\Dto\User $user */ @endphp
 <x-layouts.app>
     <div>
         <span class="font-bold text-gray block">ID:</span> {{ $user->id }}

@@ -1,10 +1,11 @@
+@php /** @var list<OhDear\PhpSdk\Dto\UptimeMetric\HttpUptimeMetric> $uptime */ @endphp
 <x-layouts.app>
     <div class="underline">Uptime:</div>
 
     <ul>
         @forelse ($uptime as $entry)
             <li>
-                <span class="font-bold text-gray">{{ $entry->datetime }}</span> ({{ $entry->uptimePercentage }}%)
+                <span class="font-bold text-gray">{{ $entry->date }}</span> ({{ $entry->totalTimeInSeconds }}s)
             </li>
         @empty
             <li class="list-none">

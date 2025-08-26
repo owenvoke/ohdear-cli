@@ -24,6 +24,6 @@ class CronCheckShowCommand extends Command
             return 1;
         }
 
-        render(view('cron-check-show', ['cronChecks' => $ohDear->cronChecks($this->argument('monitor-id'))]));
+        render(view('cron-check-show', ['cronChecks' => $ohDear->cronCheckDefinitions($this->argument('monitor-id'))]));
     }
 }

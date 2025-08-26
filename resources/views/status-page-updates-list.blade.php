@@ -1,3 +1,4 @@
+@php /** @var list<array<string, mixed>> $statusPageUpdates */ @endphp
 <x-layouts.app>
     <table style="box">
         <thead>
@@ -13,22 +14,22 @@
         @forelse($statusPageUpdates as $statusPageUpdate)
             <tr>
                 <td>
-                    <span>{{ $statusPageUpdate->id }}</span>
+                    <span>{{ $statusPageUpdate['id'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $statusPageUpdate->title }}</span>
+                    <span>{{ $statusPageUpdate['title'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $statusPageUpdate->severity }}</span>
+                    <span>{{ $statusPageUpdate['severity'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $statusPageUpdate->text }}</span>
+                    <span>{{ $statusPageUpdate['text'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $statusPageUpdate->pinned ? 'Yes' : 'No' }}</span>
+                    <span>{{ $statusPageUpdate['pinned'] ? 'Yes' : 'No' }}</span>
                 </td>
                 <td>
-                    <span>{{ $statusPageUpdate->time }}</span>
+                    <span>{{ $statusPageUpdate['time'] }}</span>
                 </td>
             </tr>
         @empty

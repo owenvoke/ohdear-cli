@@ -4,6 +4,7 @@ namespace App\Commands;
 
 use App\Commands\Concerns\EnsureHasToken;
 use LaravelZero\Framework\Commands\Command;
+use OhDear\PhpSdk\Enums\CronType;
 use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
@@ -41,7 +42,7 @@ class CronCheckAddCommand extends Command
                 $this->argument('monitor-id'),
                 [
                     'name' => $name,
-                    'type' => 'simple',
+                    'type' => CronType::Simple,
                     'frequency_in_minutes' => (int) $this->argument('frequency-or-expression'),
                     'grace_time_in_minutes' => (int) $this->option('grace-time'),
                     'description' => $this->option('description') ?? '',
@@ -51,7 +52,7 @@ class CronCheckAddCommand extends Command
                 $this->argument('monitor-id'),
                 [
                     'name' => $name,
-                    'type' => 'cron',
+                    'type' => CronType::Cron,
                     'frequency_in_minutes' => (int) $this->argument('frequency-or-expression'),
                     'grace_time_in_minutes' => (int) $this->option('grace-time'),
                     'description' => $this->option('description') ?? '',

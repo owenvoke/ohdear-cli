@@ -1,3 +1,4 @@
+@php /** @var array<string, list<OhDear\PhpSdk\Dto\BrokenLink>> $brokenLinkList */ @endphp
 <x-layouts.app>
     @forelse($brokenLinkList as $foundOnUrl => $brokenLinks)
         <div>

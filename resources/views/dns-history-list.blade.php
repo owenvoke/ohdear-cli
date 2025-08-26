@@ -1,3 +1,4 @@
+@php /** @var list<OhDear\PhpSdk\Dto\DnsHistoryItem> $dnsHistoryItems */ @endphp
 <x-layouts.app>
     <table style="box">
         <thead>

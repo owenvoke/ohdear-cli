@@ -1,3 +1,4 @@
+@php /** @var OhDear\PhpSdk\Dto\CertificateHealth $certificateHealth */ @endphp
 <x-layouts.app>
     <div>
         <span class="underline">Certificate Details</span>

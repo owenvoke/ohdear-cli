@@ -1,3 +1,4 @@
+@php /** @var list<OhDear\PhpSdk\Dto\Monitor> $monitors */ @endphp
 <x-layouts.app>
     <table style="box">
         <thead>
@@ -17,10 +18,10 @@
                     <a href="{{ $monitor->url }}">{{ $monitor->url }}</a>
                 </td>
                 <td>
-                    <span>{{ $monitor->attributes['summarized_check_result'] }}</span>
+                    <span>{{ $monitor->summarizedCheckResult }}</span>
                 </td>
                 <td>
-                    <span>{{ $monitor->attributes['latest_run_date'] }}</span>
+                    <span>{{ $monitor->latestRunDate }}</span>
                 </td>
             </tr>
         @empty

@@ -1,3 +1,4 @@
+@php /** @var OhDear\PhpSdk\Dto\StatusPage $statusPage */ @endphp
 <x-layouts.app>
     <div>
         <span class="font-bold text-gray block">ID:</span> {{ $statusPage->id }}
@@ -10,7 +11,7 @@
     <div class="underline mt-1">Monitors:</div>
 
     <ul>
-        @forelse ($statusPage->attributes['monitors'] as $monitor)
+        @forelse ($statusPage->monitors as $monitor)
             <li>
                 <span class="font-bold text-gray">{{ $monitor['sort_url'] }}</span>
             </li>
@@ -24,13 +25,13 @@
     <div class="underline mt-1">Latest Updates:</div>
 
     <ul>
-        @forelse (collect($statusPage->attributes['updates'])->take(5) as $update)
+        @forelse (collect($statusPage->updates)->take(5) as $update)
             <li>
                 <span class="font-bold text-gray">{{ $update['title'] }}</span> ({{ $update['severity'] }}, {{ $update['time'] }})
             </li>
         @empty
             <li class="list-none">
-                <span>No monitor were found for the specified status page.</span>
+                <span>No updates were found for the specified status page.</span>
             </li>
         @endforelse
     </ul>

@@ -1,4 +1,4 @@
-@php /** @var array<int, OhDear\PhpSdk\Resources\ApplicationHealthCheck> $applicationHealthChecks */ @endphp
+@php /** @var list<OhDear\PhpSdk\Dto\ApplicationHealthCheck> $applicationHealthChecks */ @endphp
 <x-layouts.app>
     <div class="underline mt-1">Application Health:</div>
 

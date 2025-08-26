@@ -1,3 +1,4 @@
+@php /** @var list<OhDear\PhpSdk\Dto\MaintenancePeriod> $maintenancePeriods */ @endphp
 <x-layouts.app>
     <div class="underline">Maintenance Periods:</div>
 

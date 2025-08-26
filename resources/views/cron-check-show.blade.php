@@ -1,3 +1,4 @@
+@php /** @var list<OhDear\PhpSdk\Dto\CronCheckDefinition> $cronChecks */ @endphp
 <x-layouts.app>
     <div class="underline">Cron Checks:</div>
 

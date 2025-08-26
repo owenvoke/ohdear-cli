@@ -1,3 +1,4 @@
+@php /** @var OhDear\PhpSdk\Dto\DnsHistoryItem $dnsHistoryItem */ @endphp
 <x-layouts.app>
     <div>
         <span class="font-bold text-gray block">ID:</span> {{ $dnsHistoryItem->id }}

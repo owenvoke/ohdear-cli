@@ -1,10 +1,11 @@
+@php /** @var list<OhDear\PhpSdk\Dto\DowntimePeriod> $downtime */ @endphp
 <x-layouts.app>
     <div class="underline">Downtime:</div>
 
     <ul>
         @forelse($downtime as $entry)
             <li>
-                <span class="font-bold text-gray">{{ $entry->startedAt }}</span> to {{ $cronCheck->endedAt }}
+                <span class="font-bold text-gray">{{ $entry->startedAt }}</span> to {{ $cronCheck->endedAt ?? 'ongoing' }}
             </li>
         @empty
             <li class="list-none">

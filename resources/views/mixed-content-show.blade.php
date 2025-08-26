@@ -1,3 +1,4 @@
+@php /** @var array<string, list<OhDear\PhpSdk\Dto\MixedContent>> $mixedContentList */ @endphp
 <x-layouts.app>
     @forelse($mixedContentList as $foundOnUrl => $mixedContents)
         <div>
