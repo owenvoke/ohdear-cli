@@ -40,7 +40,7 @@ class UptimeShowCommand extends Command
 
         $timeframe = $this->timeframeToMetricsSplit($this->option('timeframe'));
 
-        $uptime = $ohDear->httpUptimeMetrics($this->argument('monitor-id'), $startDate, $endDate, $timeframe);
+        $uptime = $ohDear->uptime($this->argument('monitor-id'), $startDate, $endDate, $timeframe);
 
         render(view('uptime-show', ['uptime' => collect($uptime)->take((int) $this->option('limit'))]));
     }

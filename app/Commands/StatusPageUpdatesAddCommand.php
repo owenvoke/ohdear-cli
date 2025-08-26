@@ -47,6 +47,6 @@ class StatusPageUpdatesAddCommand extends Command
 
         render(view('notice', ['notice' => "Created a new status page update with id {$statusPageUpdate->id}"]));
 
-        render(view('status-page-updates-list', ['statusPageUpdates' => [$statusPageUpdate]]));
+        render(view('status-page-updates-show', ['statusPageUpdate' => $statusPageUpdate]));
     }
 }
