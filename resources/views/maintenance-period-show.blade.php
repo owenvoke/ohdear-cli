@@ -4,11 +4,11 @@
     <ul>
         @forelse($maintenancePeriods as $maintenancePeriod)
             <li>
-                <span class="font-bold text-gray">{{ $maintenancePeriod->id }}</span> (site: {{ $maintenancePeriod->siteId }}) ({{ $maintenancePeriod->startsAt }} to {{ $maintenancePeriod->endsAt }})
+                <span class="font-bold text-gray">{{ $maintenancePeriod->id }}</span> (monitor: {{ $maintenancePeriod->monitorId }}) ({{ $maintenancePeriod->startsAt }} to {{ $maintenancePeriod->endsAt }})
             </li>
         @empty
             <li class="list-none">
-                <span>No maintenance periods were found for the specified site.</span>
+                <span>No maintenance periods were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>

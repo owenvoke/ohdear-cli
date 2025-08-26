@@ -14,10 +14,10 @@ class MixedContentShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'mixed-content:show {monitor-id : The id of the site to view mixed content for}';
+    protected $signature = 'mixed-content:show {monitor-id : The id of the monitor to view mixed content for}';
 
     /** @var string */
-    protected $description = 'Display the mixed content for a site';
+    protected $description = 'Display the mixed content for a monitor';
 
     public function handle(OhDear $ohDear)
     {

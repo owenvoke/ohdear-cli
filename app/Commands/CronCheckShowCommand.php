@@ -13,10 +13,10 @@ class CronCheckShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'cron-check:show {monitor-id : The id of the site to view cron checks for}';
+    protected $signature = 'cron-check:show {monitor-id : The id of the monitor to view cron checks for}';
 
     /** @var string */
-    protected $description = 'Display the cron checks for a site';
+    protected $description = 'Display the cron checks for a monitor';
 
     public function handle(OhDear $ohDear)
     {

@@ -10,14 +10,14 @@
                     </li>
                 @empty
                     <li class="list-none">
-                        <span>No mixed content was found for the specified site.</span>
+                        <span>No mixed content was found for the specified monitor.</span>
                     </li>
                 @endforelse
             </ul>
         </div>
     @empty
         <div>
-            <span>No mixed content was found for the specified site.</span>
+            <span>No mixed content was found for the specified monitor.</span>
         </div>
     @endforelse
 </x-layouts.app>

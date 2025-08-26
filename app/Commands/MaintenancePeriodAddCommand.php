@@ -14,12 +14,12 @@ class MaintenancePeriodAddCommand extends Command
 
     /** @var string */
     protected $signature = 'maintenance-period:add
-                            {monitor-id : The id of the site that you want to create a maintenance period for}
+                            {monitor-id : The id of the monitor that you want to create a maintenance period for}
                             {start-date : The start date that you want to create a maintenance period for}
                             {end-date : The end date that you want to create a maintenance period for}';
 
     /** @var string */
-    protected $description = 'Add a new maintenance period for a site';
+    protected $description = 'Add a new maintenance period for a monitor';
 
     public function handle(OhDear $ohDear)
     {

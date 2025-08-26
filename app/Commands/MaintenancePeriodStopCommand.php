@@ -14,10 +14,10 @@ class MaintenancePeriodStopCommand extends Command
 
     /** @var string */
     protected $signature = 'maintenance-period:stop
-                            {monitor-id : The id of the site that you want to stop the maintenance period for}';
+                            {monitor-id : The id of the monitor that you want to stop the maintenance period for}';
 
     /** @var string */
-    protected $description = 'Stop the current maintenance period for a site';
+    protected $description = 'Stop the current maintenance period for a monitor';
 
     public function handle(OhDear $ohDear)
     {
@@ -27,6 +27,6 @@ class MaintenancePeriodStopCommand extends Command
 
         $ohDear->stopMaintenancePeriod($this->argument('monitor-id'));
 
-        render(view('notice', ['notice' => "Stopped the current maintenance period for site with id {$this->argument('monitor-id')}"]));
+        render(view('notice', ['notice' => "Stopped the current maintenance period for monitor with id {$this->argument('monitor-id')}"]));
     }
 }

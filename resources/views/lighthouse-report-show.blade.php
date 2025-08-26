@@ -35,7 +35,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No issues were found for the specified site.</span>
+                <span>No issues were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>

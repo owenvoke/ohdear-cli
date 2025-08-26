@@ -20,7 +20,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No statuses were found for the specified site's domain.</span>
+                <span>No statuses were found for the specified monitor's domain.</span>
             </li>
         @endforelse
     </ul>

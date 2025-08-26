@@ -8,7 +8,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No downtime entries were found for the specified site.</span>
+                <span>No downtime entries were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>

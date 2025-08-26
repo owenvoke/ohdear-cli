@@ -14,13 +14,13 @@ class DowntimeShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'downtime:show {monitor-id : The id of the site to view downtime for}
+    protected $signature = 'downtime:show {monitor-id : The id of the monitor to view downtime for}
                                           {start-date? : The date to start at}
                                           {end-date? : The date to end at}
                                           {--limit=10 : The number of downtime records to show}';
 
     /** @var string */
-    protected $description = 'Display the recent downtime for a site';
+    protected $description = 'Display the recent downtime for a monitor';
 
     public function handle(OhDear $ohDear)
     {

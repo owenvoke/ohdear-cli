@@ -54,7 +54,7 @@ ohdear list
 #### Application Health Monitoring
 
 - `ohdear application-health:show [id]`   
-  Display application health for a specific site
+  Display application health for a specific monitor
 
 #### Broken Links
 

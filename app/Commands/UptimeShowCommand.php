@@ -15,14 +15,14 @@ class UptimeShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'uptime:show {monitor-id : The id of the site to view uptime for}
+    protected $signature = 'uptime:show {monitor-id : The id of the monitor to view uptime for}
                                         {start-date? : The date to start at}
                                         {end-date? : The date to end at}
                                         {--limit=10 : The number of uptime records to show}
                                         {--timeframe=hour : The timeframe to query data by}';
 
     /** @var string */
-    protected $description = 'Display the recent uptime for a site';
+    protected $description = 'Display the recent uptime for a monitor';
 
     public function handle(OhDear $ohDear)
     {

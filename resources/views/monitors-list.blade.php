@@ -8,24 +8,24 @@
                 <th>Last Checked</th>
             </tr>
         </thead>
-        @forelse($sites as $site)
+        @forelse($monitors as $monitor)
             <tr>
                 <td>
-                    <span>{{ $site->id }}</span>
+                    <span>{{ $monitor->id }}</span>
                 </td>
                 <td>
-                    <a href="{{ $site->url }}">{{ $site->url }}</a>
+                    <a href="{{ $monitor->url }}">{{ $monitor->url }}</a>
                 </td>
                 <td>
-                    <span>{{ $site->attributes['summarized_check_result'] }}</span>
+                    <span>{{ $monitor->attributes['summarized_check_result'] }}</span>
                 </td>
                 <td>
-                    <span>{{ $site->attributes['latest_run_date'] }}</span>
+                    <span>{{ $monitor->attributes['latest_run_date'] }}</span>
                 </td>
             </tr>
         @empty
             <tr>
-                <td colspan="4">No sites were found for the authenticated user.</td>
+                <td colspan="4">No monitors were found for the authenticated user.</td>
             </tr>
         @endforelse
     </table>

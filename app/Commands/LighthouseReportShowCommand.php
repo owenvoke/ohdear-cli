@@ -13,11 +13,11 @@ class LighthouseReportShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'lighthouse-report:show {monitor-id : The id of the site to access Lighthouse reports for}
+    protected $signature = 'lighthouse-report:show {monitor-id : The id of the monitor to access Lighthouse reports for}
                                                    {id=latest : The id of the Lighthouse report to view}';
 
     /** @var string */
-    protected $description = 'Display the latest Lighthouse report for a site';
+    protected $description = 'Display the latest Lighthouse report for a monitor';
 
     public function handle(OhDear $ohDear)
     {

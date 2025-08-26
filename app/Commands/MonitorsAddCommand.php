@@ -14,7 +14,10 @@ class MonitorsAddCommand extends Command
 
     /** @var string */
     protected $signature = 'monitors:add
-                            {url : The url of the site that you want to add}
+                            {url : The URL or location that you want to monitor}
+                            {--http : Create an HTTP monitor (default)}
+                            {--ping : Create an ICMP ping monitor}
+                            {--tcp : Create a TCP port monitor}
                             {--t|team= : The id of the team that the monitor should be added to}
                             {--c|checks=* : The list of checks that should be used, defaults to all checks}';
 
@@ -44,13 +47,20 @@ class MonitorsAddCommand extends Command
 
         $checks = $this->hasOption('checks') ? ['checks' => $this->option('checks')] : [];
 
-        $site = $ohDear->createMonitor(array_merge([
+        $type = match (true) {
+            $this->option('ping') => 'ping',
+            $this->option('tcp') => 'tcp',
+            default => 'http',
+        };
+
+        $monitor = $ohDear->createMonitor(array_merge([
             'url' => $url,
+            'type' => $type,
             'team_id' => $teamId,
         ], $checks));
 
-        render(view('notice', ['notice' => "Created a new site with id {$site->id}"]));
+        render(view('notice', ['notice' => "Created a new monitor with id {$monitor->id}"]));
 
-        render(view('sites-show', ['site' => $site, 'uptimePercentage' => 'N/A']));
+        render(view('monitors-show', ['monitor' => $monitor, 'uptimePercentage' => 'N/A']));
     }
 }

@@ -13,10 +13,10 @@ class CheckShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'check:show {monitor-id : The id of the site to view checks for}';
+    protected $signature = 'check:show {monitor-id : The id of the monitor to view checks for}';
 
     /** @var string */
-    protected $description = 'Display the checks for a site';
+    protected $description = 'Display the checks for a monitor';
 
     public function handle(OhDear $ohDear)
     {

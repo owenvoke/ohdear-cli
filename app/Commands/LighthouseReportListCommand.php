@@ -13,7 +13,7 @@ class LighthouseReportListCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'lighthouse-report:list {monitor-id : The id of the site to view Lighthouse reports for}';
+    protected $signature = 'lighthouse-report:list {monitor-id : The id of the monitor to view Lighthouse reports for}';
 
     /** @var string */
     protected $description = 'Display a list of Lighthouse reports and their summary';

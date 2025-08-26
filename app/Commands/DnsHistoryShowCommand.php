@@ -13,11 +13,11 @@ class DnsHistoryShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'dns-history:show {monitor-id : The id of the site to access DNS history items for}
+    protected $signature = 'dns-history:show {monitor-id : The id of the monitor to access DNS history items for}
                                              {id : The id of the DNS history item to view}';
 
     /** @var string */
-    protected $description = 'Display the latest performance details for a site';
+    protected $description = 'Display the latest performance details for a monitor';
 
     public function handle(OhDear $ohDear)
     {

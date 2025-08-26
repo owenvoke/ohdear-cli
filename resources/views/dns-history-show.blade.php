@@ -14,7 +14,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No nameservers were found for the specified site.</span>
+                <span>No nameservers were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>
@@ -28,7 +28,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No nameservers were found for the specified site.</span>
+                <span>No nameservers were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>
@@ -42,7 +42,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No issues were found for the specified site.</span>
+                <span>No issues were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>

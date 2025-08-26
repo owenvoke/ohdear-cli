@@ -13,10 +13,10 @@ class MaintenancePeriodShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'maintenance-period:show {monitor-id : The id of the site to view maintenance periods for}';
+    protected $signature = 'maintenance-period:show {monitor-id : The id of the monitor to view maintenance periods for}';
 
     /** @var string */
-    protected $description = 'Display the maintenance periods for a site';
+    protected $description = 'Display the maintenance periods for a monitor';
 
     public function handle(OhDear $ohDear)
     {

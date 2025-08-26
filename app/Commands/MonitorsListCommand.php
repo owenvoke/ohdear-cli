@@ -27,6 +27,6 @@ class MonitorsListCommand extends Command
             return 1;
         }
 
-        render(view('sites-list', ['sites' => $ohDear->monitors()]));
+        render(view('monitors-list', ['monitors' => $ohDear->monitors()]));
     }
 }

@@ -10,7 +10,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No application checks were found for the specified site.</span>
+                <span>No application checks were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>

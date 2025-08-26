@@ -22,7 +22,7 @@ class CronCheckAddCommand extends Command
                             {--timezone=UTC : The timezone of your server}';
 
     /** @var string */
-    protected $description = 'Add a new cron check for a site';
+    protected $description = 'Add a new cron check for a monitor';
 
     public function handle(OhDear $ohDear)
     {

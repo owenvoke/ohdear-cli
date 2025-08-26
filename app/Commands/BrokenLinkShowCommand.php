@@ -14,10 +14,10 @@ class BrokenLinkShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'broken-link:show {monitor-id : The id of the site to view broken links for}';
+    protected $signature = 'broken-link:show {monitor-id : The id of the monitor to view broken links for}';
 
     /** @var string */
-    protected $description = 'Display the broken links for a site';
+    protected $description = 'Display the broken links for a monitor';
 
     public function handle(OhDear $ohDear)
     {

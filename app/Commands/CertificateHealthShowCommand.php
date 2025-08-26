@@ -13,13 +13,13 @@ class CertificateHealthShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'certificate-health:show {monitor-id : The id of the site to view certificate health for}
+    protected $signature = 'certificate-health:show {monitor-id : The id of the monitor to view certificate health for}
                                                     {--c|checks : Include a list of the certificate checks that were performed}
                                                     {--i|issuers : Include a list of the certificate issuers}
                                                     {--f|full : Include all certificate information}';
 
     /** @var string */
-    protected $description = 'Display the certificate health for a site';
+    protected $description = 'Display the certificate health for a monitor';
 
     public function handle(OhDear $ohDear)
     {

@@ -7,16 +7,16 @@
         <span class="font-bold text-gray block">Status Summary:</span> {{ $statusPage->summarizedStatus }}
     </div>
 
-    <div class="underline mt-1">Sites:</div>
+    <div class="underline mt-1">Monitors:</div>
 
     <ul>
-        @forelse ($statusPage->attributes['sites'] as $site)
+        @forelse ($statusPage->attributes['monitors'] as $monitor)
             <li>
-                <span class="font-bold text-gray">{{ $site['sort_url'] }}</span>
+                <span class="font-bold text-gray">{{ $monitor['sort_url'] }}</span>
             </li>
         @empty
             <li class="list-none">
-                <span>No sites were found for the specified status page.</span>
+                <span>No monitors were found for the specified status page.</span>
             </li>
         @endforelse
     </ul>
@@ -30,7 +30,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No sites were found for the specified status page.</span>
+                <span>No monitor were found for the specified status page.</span>
             </li>
         @endforelse
     </ul>

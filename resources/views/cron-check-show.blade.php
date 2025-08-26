@@ -8,7 +8,7 @@
             </li>
         @empty
             <li class="list-none">
-                <span>No cron checks were found for the specified site.</span>
+                <span>No cron checks were found for the specified monitor.</span>
             </li>
         @endforelse
     </ul>

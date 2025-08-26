@@ -13,7 +13,7 @@ class DnsHistoryListCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'dns-history:list {monitor-id : The id of the site to view DNS history for}';
+    protected $signature = 'dns-history:list {monitor-id : The id of the monitor to view DNS history for}';
 
     /** @var string */
     protected $description = 'Display a list of DNS history items and their summary';

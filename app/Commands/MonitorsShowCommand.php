@@ -13,10 +13,10 @@ class MonitorsShowCommand extends Command
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'monitors:show {id : The id of the site to view}';
+    protected $signature = 'monitors:show {id : The id of the monitor to view}';
 
     /** @var string */
-    protected $description = 'Display a single site and its current status';
+    protected $description = 'Display a single monitor and its current status';
 
     /** {@inheritdoc} */
     protected $aliases = ['sites:show'];
@@ -27,14 +27,14 @@ class MonitorsShowCommand extends Command
             return 1;
         }
 
-        $site = $ohDear->monitor($this->argument('id'));
+        $monitor = $ohDear->monitor($this->argument('id'));
 
-        $uptimePercentage = $site->uptime(
+        $uptimePercentage = $monitor->uptime(
             now()->subDay()->format('YmdHis'),
             now()->format('YmdHis'),
             'day'
         )[0]->uptimePercentage ?? 'unknown';
 
-        render(view('sites-show', compact('site', 'uptimePercentage')));
+        render(view('monitors-show', compact('monitor', 'uptimePercentage')));
     }
 }

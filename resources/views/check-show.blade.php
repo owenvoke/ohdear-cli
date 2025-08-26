@@ -25,7 +25,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="2">No checks were found for the specified site.</td>
+                <td colspan="2">No checks were found for the specified monitor.</td>
             </tr>
         @endforelse
     </table>

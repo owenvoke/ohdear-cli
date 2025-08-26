@@ -19,7 +19,7 @@
                 </li>
             @empty
                 <li class="list-none">
-                    <span>No certificate checks were found for the specified site.</span>
+                    <span>No certificate checks were found for the specified monitor.</span>
                 </li>
             @endforelse
         </ul>
@@ -35,7 +35,7 @@
                 </li>
             @empty
                 <li class="list-none">
-                    <span>No issuers were found for the specified site.</span>
+                    <span>No issuers were found for the specified monitor.</span>
                 </li>
             @endforelse
         </ul>
