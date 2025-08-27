@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org).
 
+## 4.5.1 - 2025-08-27
+
+### Fixed
+- Resolve missing `split` in uptime command
+
 ## 4.5.0 - 2025-08-27
 
 ### Changed
