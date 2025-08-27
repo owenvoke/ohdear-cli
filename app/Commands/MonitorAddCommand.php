@@ -8,12 +8,12 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class MonitorsAddCommand extends Command
+class MonitorAddCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'monitors:add
+    protected $signature = 'monitor:add
                             {url : The URL or location that you want to monitor}
                             {--http : Create an HTTP monitor (default)}
                             {--ping : Create an ICMP ping monitor}
@@ -61,6 +61,6 @@ class MonitorsAddCommand extends Command
 
         render(view('notice', ['notice' => "Created a new monitor with id {$monitor->id}"]));
 
-        render(view('monitors-show', ['monitor' => $monitor, 'uptimePercentage' => 'N/A']));
+        render(view('monitor-show', ['monitor' => $monitor, 'uptimePercentage' => 'N/A']));
     }
 }

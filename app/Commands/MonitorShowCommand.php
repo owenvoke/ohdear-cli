@@ -8,12 +8,12 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class MonitorsShowCommand extends Command
+class MonitorShowCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'monitors:show {id : The id of the monitor to view}';
+    protected $signature = 'monitor:show {id : The id of the monitor to view}';
 
     /** @var string */
     protected $description = 'Display a single monitor and its current status';
@@ -29,6 +29,6 @@ class MonitorsShowCommand extends Command
 
         $monitor = $ohDear->monitor($this->argument('id'));
 
-        render(view('monitors-show', ['monitor' => $monitor]));
+        render(view('monitor-show', ['monitor' => $monitor]));
     }
 }

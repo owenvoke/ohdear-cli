@@ -8,12 +8,12 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class StatusPageUpdatesAddCommand extends Command
+class StatusPageUpdateAddCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'status-page-updates:add
+    protected $signature = 'status-page-update:add
                             {status-page-id : The id of the status page that the update should be added to}
                             {title : The title of the update}
                             {text : The main text of the update}
@@ -23,6 +23,9 @@ class StatusPageUpdatesAddCommand extends Command
 
     /** @var string */
     protected $description = 'Add a new update to a status page';
+
+    /** {@inheritdoc} */
+    protected $aliases = ['status-page-updates:add'];
 
     public function handle(OhDear $ohDear)
     {
@@ -47,6 +50,6 @@ class StatusPageUpdatesAddCommand extends Command
 
         render(view('notice', ['notice' => "Created a new status page update with id {$statusPageUpdate->id}"]));
 
-        render(view('status-page-updates-show', ['statusPageUpdate' => $statusPageUpdate]));
+        render(view('status-page-update-show', ['statusPageUpdate' => $statusPageUpdate]));
     }
 }

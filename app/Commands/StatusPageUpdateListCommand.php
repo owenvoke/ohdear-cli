@@ -8,15 +8,18 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class StatusPageUpdatesListCommand extends Command
+class StatusPageUpdateListCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'status-page-updates:list { status-page-id : The id of the status page }';
+    protected $signature = 'status-page-update:list { status-page-id : The id of the status page }';
 
     /** @var string */
     protected $description = 'Display a list of status page updates';
+
+    /** {@inheritdoc} */
+    protected $aliases = ['status-page-updates:list'];
 
     public function handle(OhDear $ohDear)
     {
@@ -24,6 +27,6 @@ class StatusPageUpdatesListCommand extends Command
             return 1;
         }
 
-        render(view('status-page-updates-list', ['statusPageUpdates' => $ohDear->statusPage($this->argument('status-page-id'))->updates]));
+        render(view('status-page-update-list', ['statusPageUpdates' => $ohDear->statusPage($this->argument('status-page-id'))->updates]));
     }
 }

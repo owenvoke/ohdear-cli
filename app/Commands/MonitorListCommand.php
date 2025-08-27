@@ -8,12 +8,12 @@ use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
 
-class MonitorsListCommand extends Command
+class MonitorListCommand extends Command
 {
     use EnsureHasToken;
 
     /** @var string */
-    protected $signature = 'monitors:list';
+    protected $signature = 'monitor:list';
 
     /** @var string */
     protected $description = 'Display a list of monitors and their current status';
@@ -27,6 +27,6 @@ class MonitorsListCommand extends Command
             return 1;
         }
 
-        render(view('monitors-list', ['monitors' => $ohDear->monitors()]));
+        render(view('monitor-list', ['monitors' => $ohDear->monitors()]));
     }
 }
