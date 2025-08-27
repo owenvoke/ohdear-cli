@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org).
 
+## 4.5.2 - 2025-08-27
+
+### Fixed
+- Resolve float type for Uptime percentage
+
 ## 4.5.1 - 2025-08-27
 
 ### Fixed
