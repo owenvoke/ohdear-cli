@@ -5,7 +5,7 @@
     <ul>
         @forelse ($uptime as $entry)
             <li>
-                <span class="font-bold text-gray">{{ $entry->date }}</span> ({{ $entry->uptimePercentage }}%)
+                <span class="font-bold text-gray">{{ $entry->datetime }}</span> ({{ $entry->uptimePercentage }}%)
             </li>
         @empty
             <li class="list-none">

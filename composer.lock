@@ -2669,16 +2669,16 @@
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
-            "version": "4.2.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ohdearapp/ohdear-php-sdk.git",
-                "reference": "aa046011632f9a8a28693c5d5c38e50e14512f50"
+                "reference": "2e56545afe31719c77ee79ec7c21c1f81592aafd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/aa046011632f9a8a28693c5d5c38e50e14512f50",
-                "reference": "aa046011632f9a8a28693c5d5c38e50e14512f50",
+                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/2e56545afe31719c77ee79ec7c21c1f81592aafd",
+                "reference": "2e56545afe31719c77ee79ec7c21c1f81592aafd",
                 "shasum": ""
             },
             "require": {
@@ -2724,9 +2724,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ohdearapp/ohdear-php-sdk/issues",
-                "source": "https://github.com/ohdearapp/ohdear-php-sdk/tree/4.2.0"
+                "source": "https://github.com/ohdearapp/ohdear-php-sdk/tree/4.2.1"
             },
-            "time": "2025-08-26T22:56:40+00:00"
+            "time": "2025-08-27T07:49:42+00:00"
         },
         {
             "name": "phpoption/phpoption",

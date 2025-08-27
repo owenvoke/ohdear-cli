@@ -5,7 +5,7 @@ namespace App\Commands;
 use App\Commands\Concerns\EnsureHasToken;
 use Carbon\Carbon;
 use LaravelZero\Framework\Commands\Command;
-use OhDear\PhpSdk\Enums\UptimeMetricsSplit;
+use OhDear\PhpSdk\Enums\UptimeSplit;
 use OhDear\PhpSdk\OhDear;
 
 use function Termwind\render;
@@ -19,7 +19,7 @@ class UptimeShowCommand extends Command
                                         {start-date? : The date to start at}
                                         {end-date? : The date to end at}
                                         {--limit=10 : The number of uptime records to show}
-                                        {--timeframe=hour : The timeframe to query data by}';
+                                        {--timeframe=hour : The timeframe to query data by (hour, day, month)}';
 
     /** @var string */
     protected $description = 'Display the recent uptime for a monitor';
@@ -38,21 +38,19 @@ class UptimeShowCommand extends Command
             $endDate = now()->format('Y-m-d H:i:s');
         }
 
-        $timeframe = $this->timeframeToMetricsSplit($this->option('timeframe'));
+        $timeframe = $this->timeframeToSplit($this->option('timeframe'));
 
         $uptime = $ohDear->uptime($this->argument('monitor-id'), $startDate, $endDate, $timeframe);
 
         render(view('uptime-show', ['uptime' => collect($uptime)->take((int) $this->option('limit'))]));
     }
 
-    private function timeframeToMetricsSplit(mixed $timeframe): UptimeMetricsSplit
+    private function timeframeToSplit(mixed $timeframe): UptimeSplit
     {
         return match ($timeframe) {
-            'month' => UptimeMetricsSplit::Month,
-            'week' => UptimeMetricsSplit::Week,
-            'day' => UptimeMetricsSplit::Day,
-            'minute' => UptimeMetricsSplit::Minute,
-            default => UptimeMetricsSplit::Hour,
+            'month' => UptimeSplit::Month,
+            'day' => UptimeSplit::Day,
+            default => UptimeSplit::Hour,
         };
     }
 }
