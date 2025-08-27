@@ -127,24 +127,24 @@ ohdear list
 
 #### Monitors
 
-- `ohdear monitors:add [url]`  
+- `ohdear monitor:add [url]`  
   Add a new monitor to Oh Dear
-- `ohdear monitors:list`  
+- `ohdear monitor:list`  
   Display a list of monitors and their current status
-- `ohdear monitors:show [id]`  
+- `ohdear monitor:show [id]`  
   Display details about a specific monitor
 
 #### Status Pages
 
-- `ohdear status-pages:list`  
+- `ohdear status-page:list`  
   Display a list of status pages and their current status
-- `ohdear status-pages:show [id]`  
+- `ohdear status-page:show [id]`  
   Display details about a specific status page
-- `ohdear status-page-updates:add [status-page-id] [title] [text] [--severity=info] [--pinned] [--time=]`  
+- `ohdear status-page-update:add [status-page-id] [title] [text] [--severity=info] [--pinned] [--time=]`  
   Add a new update for a status page
-- `ohdear status-page-updates:list [status-page-id]`  
+- `ohdear status-page-update:list [status-page-id]`  
   Display updates for a status page
-- `ohdear status-page-updates:delete [id]`  
+- `ohdear status-page-update:delete [id]`  
   Delete a status page update
 
 #### Uptime
