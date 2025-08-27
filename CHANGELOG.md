@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org).
 
+## 4.5.0 - 2025-08-27
+
+### Changed
+- Add support for [breaking API changes to monitors](https://ohdear.app/news-and-updates/why-we-will-be-making-breaking-changes-in-our-api-soon)
+- Standardise names of commands (with aliases)
+
 ## 4.4.0 - 2025-06-13
 
 ### Changed
