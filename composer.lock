@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae1118b56c3e714711b08d1117fa71ef",
+    "content-hash": "121e27d77309f52c7a31b5303050a0df",
     "packages": [],
     "packages-dev": [
         {
@@ -2669,16 +2669,16 @@
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
-            "version": "4.1.0",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ohdearapp/ohdear-php-sdk.git",
-                "reference": "2187bc97258d930634161ad81aff4f7046f9d95c"
+                "reference": "aa046011632f9a8a28693c5d5c38e50e14512f50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/2187bc97258d930634161ad81aff4f7046f9d95c",
-                "reference": "2187bc97258d930634161ad81aff4f7046f9d95c",
+                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/aa046011632f9a8a28693c5d5c38e50e14512f50",
+                "reference": "aa046011632f9a8a28693c5d5c38e50e14512f50",
                 "shasum": ""
             },
             "require": {
@@ -2724,9 +2724,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ohdearapp/ohdear-php-sdk/issues",
-                "source": "https://github.com/ohdearapp/ohdear-php-sdk/tree/4.1.0"
+                "source": "https://github.com/ohdearapp/ohdear-php-sdk/tree/4.2.0"
             },
-            "time": "2025-08-26T14:19:15+00:00"
+            "time": "2025-08-26T22:56:40+00:00"
         },
         {
             "name": "phpoption/phpoption",
